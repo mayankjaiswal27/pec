@@ -81,27 +81,29 @@
             font-size: 20px;
         }
     
-        a.navb {
+        /* a.navb {
             color: #407bff;
-            font-size: 40px;
+            font-size: 60px;
+            padding:2%;
         }
     
         a.navb:hover {
             color: #000000;
             font-size: 20px;
+           
         }
     
         .navb-active {
             color: #000000;
             font-size: 20px;
-        }
+        } */
     
-        .navb,
+        /* .navb,
         form {
             text-align: center;
             padding-top: 1%;
-            padding-left: 1.5%;
-            padding-right: 4.5%;
+            padding-left: 1%;
+            padding-right: 4%;
         }
     
         .navb-active {
@@ -110,7 +112,28 @@
             padding-top: 2%;
             padding-left: 1.5%;
             padding-right: 4.5%;
-        }
+        } */
+        .navb { 
+    padding: 2%; /* Adjust padding as needed */
+    margin-left:10%;
+    padding-left:2%;
+}
+
+.navb a {
+    color: blue; /* Set link color to blue */
+    text-decoration: none; /* Remove underlines from links */
+    margin-left: 5%; /* Adjust spacing between links */
+    font-size:20px;
+}
+
+.navb a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.navb form {
+    margin: 0; /* Remove margin on the form element */
+}
+
         .anc-foot{
             text-decoration: underline;
         }
@@ -154,7 +177,7 @@
                             </x-nav-link>
                             <x-nav-link :href="route('logout')"
                                     onclick="event.preventDefault();
-                            
+
                                                 this.closest('form').submit();">
                                                 
                                 {{ __('Log Out') }}
