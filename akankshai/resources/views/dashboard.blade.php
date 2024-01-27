@@ -83,7 +83,7 @@
     
         a.navb {
             color: #407bff;
-            font-size: 20px;
+            font-size: 40px;
         }
     
         a.navb:hover {
@@ -122,7 +122,7 @@
                 <div class="grid-container">
 
                     <div class="grid-child-one">
-                        <img src="../assets/logo.svg"/>
+                        <img src="./assets/logo.svg"/>
                         <div class="about-text"><br>
                             <b>Welcome {{ Auth::user()->name }} !! </b><br><br>
                             <p>
@@ -131,7 +131,7 @@
                                 suits the most to your personality .
                                 Are you ready?</p><br><br>
                                 <a href="{{route('quiz.index')}}"><button class="btn"><span class="btn-text">Take Test</span></button></a>
-                                <img src="../assets/dashboardimg.svg"/>
+                                <img src="./assets/dashboardimg.svg"/>
                         </div>
                         
                     </div>

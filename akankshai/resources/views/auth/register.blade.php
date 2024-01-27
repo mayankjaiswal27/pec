@@ -95,7 +95,7 @@
             margin: 1% auto;
         }
         .image{
-           margin-top: -18%;
+           margin-top: -8%;
         } 
         .google button{
             margin-bottom: 2%;
@@ -151,7 +151,7 @@
 <body>
     <div class="navbar">
         <div class="logo">
-            <img src="../assets/logo.svg"/>
+            <img src="./assets/logo.svg"/>
         </div>
         <div class="nav-links">
             <a href="{{ url('/dashboard') }}" class="">Home</a>{{--student dashboard page--}}
@@ -185,23 +185,21 @@
             <div class="btn">
                 <button type="submit">Create Account</button>
             </div>
-            <h6>Or Sign up with google</h6>
+            
                 <div class="google">
                     {{-- Google button  --}}
-                    <button>Sign Up with Google</button>
+                    
                     <p>Already have an account?</p>
                     <a href="{{ url('/') }}" class="">Login</a>
                 </div> 
                 <div class="image">
-                    <img src="../assets/Sign-Up.svg">
+                    <img src="./assets/Sign-Up.svg">
                 </div>
             </div>
         </form>
     </div>
     {{-- I am not a robot button(center) --}}
-    <div class="robot">
-        <button>I am not a robot</button>
-    </div>
+    
     <div class="footer-1">
         <footer>Made with ❤️ by  <a href="{{ route('meet') }}" class="anc-foot">Team Smart Under Criticism</a></footer>
     </div>

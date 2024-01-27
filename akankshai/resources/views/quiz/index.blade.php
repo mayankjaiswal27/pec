@@ -92,7 +92,7 @@
 <body>
     <div class="navbar">
         <div class="logo">
-            <img src="../assets/logo.svg" />
+            <img src="./assets/logo.svg" />
         </div>
         <div class="nav-links">
             <a href="{{ url('/dashboard') }}" class="">Home</a>{{--student dashboard page--}}
