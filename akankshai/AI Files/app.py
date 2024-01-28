@@ -84,10 +84,10 @@ from sklearn.preprocessing import LabelEncoder
 from flask import Flask, render_template_string
 
 # Load the trained models
-model_generic = tf.keras.models.load_model("model_generic.h5")
-model_parallel_1 = tf.keras.models.load_model("model_parallel_1.h5")
-model_parallel_2 = tf.keras.models.load_model("model_parallel_2.h5")
-model_combined = tf.keras.models.load_model("model_combined.h5")
+model_generic = tf.keras.models.load_model("AI Files/model_generic.h5")
+model_parallel_1 = tf.keras.models.load_model("AI Files/model_parallel_1.h5")
+model_parallel_2 = tf.keras.models.load_model("AI Files/model_parallel_2.h5")
+model_combined = tf.keras.models.load_model("AI Files/model_combined.h5")
 
 # Example input data (replace with your actual input data)
 input_data_generic = [2, 3, 3, 0, 2, 0, 2, 1, 2, 0, 1, 2, 0, 0, 2, 0, 0, 2, 1, 0]
