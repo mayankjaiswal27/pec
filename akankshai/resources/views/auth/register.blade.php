@@ -24,8 +24,11 @@
         .navbar a {
             margin-left: 20px; /* Adjust spacing between links if necessary */
             color: #407bff;
-            font-size: 95%;
+            font-size: 20px;
             text-decoration: none; /* Optional: remove underline from links */
+        }
+        .navbar a:hover{
+            text-decoration: underline; 
         }
         .register{
             margin-top: 5%;

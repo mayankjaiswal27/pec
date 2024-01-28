@@ -63,7 +63,7 @@
         <div class="card__content">
           <span class="card__title">Kshitij Kashyap</span>
           <span class="card__name">Content Lead, Frontend Developer and Designer</span>
-          <p class="card__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit veritatis labore provident non tempora odio est sunt, ipsum</p>
+          <p class="card__text">Crafting captivating content, AI solutions, and innovative designs for engaging experiences</p>
           <button class="card__btn">View More</button>
         </div>
       </div>
@@ -75,7 +75,7 @@
         <div class="card__content">
           <span class="card__title">Harshita Khare</span>
           <span class="card__name">Frontend Developer and Designer</span>
-          <p class="card__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit veritatis labore provident non tempora odio est sunt, ipsum</p>
+          <p class="card__text">Crafting immersive digital experiences with innovative frontend and aesthetic design.</p>
           <button class="card__btn">View More</button>
         </div>
       </div>
@@ -87,7 +87,7 @@
         <div class="card__content">
           <span class="card__title">Khushi Sonkusare</span>
           <span class="card__name">Design Lead, Frontend Developer and Designer</span>
-          <p class="card__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit veritatis labore provident non tempora odio est sunt, ipsum</p>
+          <p class="card__text">Design Lead crafting seamless digital landscapes with tech expertise.</p>
           <button class="card__btn">View More</button>
         </div>
       </div>
@@ -100,7 +100,7 @@
         <div class="card__content">
           <span class="card__title">Devesh Pardhi</span>
           <span class="card__name">Backend and AI developer</span>
-          <p class="card__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit veritatis labore provident non tempora odio est sunt, ipsum</p>
+          <p class="card__text">Integrating backend and AI for seamless efficiency and innovation.</p>
           <button class="card__btn">View More</button>
         </div>
 
