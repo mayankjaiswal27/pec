@@ -36,7 +36,7 @@ class QuizController extends Controller
             ]);
         }
 
-        return redirect()->route('quiz.index')->with('success', 'Quiz submitted successfully!');
+        return redirect()->route('AI Files.index2')->with('success', 'Quiz submitted successfully!');
     }
 }
 
