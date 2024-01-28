@@ -99,6 +99,10 @@
     border: 1px solid  #3751FE; /* Remove default button border */
     border-radius: 1px; /* Add a slight border-radius for a rounded look */
     cursor: pointer; /* Change cursor to pointer on hover */
+    margin-top:2%;
+    padding: 1%;
+    margin-left:2%;
+    font-size:20px;
 }
 .btn1:hover{
     background-color: #407BFF; 
@@ -185,6 +189,15 @@
         }
   </style>
   </head>
+  <script>
+    function showAlert(message) {
+        alert(message);
+    }
+    var errorMessage = "{{ session('error') }}";
+    if (errorMessage) {
+        showAlert(errorMessage);
+    }
+</script>
   <body>
   <div class="py-3">
 
@@ -202,10 +215,7 @@
                             <p>Welcome back please login to your account</p>
                         </div>  
                         <div class="login"><br>
-                            @if(session('error'))
-                                <p style="color: red;">{{ session('error') }}</p>
-                            @endif
-                            <form action="{{ url('/login') }}" method="post">
+                            <form action="{{ url('/student/login') }}" method="post">
                                 @csrf
                                 <input type="email" name="email" placeholder="email" value="{{ old('email') }}" required><br>
                                 <input type="password" name="password" placeholder="password" required><br>
@@ -219,7 +229,7 @@
                             </div>
                             <div class="buttons">
                                 <button class="btn1" type="submit">Login</button>
-                                <button class="btn2" type="submit">SignUp</button>
+                                <a href="{{ url('/student/register') }}" class="btn2" style="height: 30px   ">SignUp</a>
                             </div>
                             </form>
                               <!-- <a href="{{route('login')}}"><button class="btn"><span class="btn-text">Login</span></button></a> -->

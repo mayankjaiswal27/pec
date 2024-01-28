@@ -1,6 +1,26 @@
 /* ------------ GOOGLE FONTS ------------ */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+/* ------------Navbar-----------------*/
+.navb { 
+  padding: 2%; /* Adjust padding as needed */
+  margin-left:10%;
+  padding-left:2%;
+}
 
+.navb a {
+  color: blue; /* Set link color to blue */
+  text-decoration: none; /* Remove underlines from links */
+  margin-left: 5%; /* Adjust spacing between links */
+  font-size:20px;
+}
+
+.navb a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.navb form {
+  margin: 0; /* Remove margin on the form element */
+}
 /* ------------ VARIABLES ------------ */
 :root{
   /* FONT */
