@@ -2,6 +2,106 @@ import pandas as pd
 import tensorflow as tf
 from sklearn.preprocessing import LabelEncoder
 from flask import Flask, render_template_string
+from flask import Flask, request
+import mysql.connector
+
+# Database connection parameters
+hostname = "127.0.0.1"
+username = "root"
+password = ""
+dbname = "akankshai"
+
+# Establish a database connection
+conn = mysql.connector.connect(host=hostname, user=username, password=password, database=dbname)
+
+# Check if the connection is successful
+if conn.is_connected():
+    print("Connected to the database")
+
+    # Create a cursor object to execute SQL queries
+    cursor = conn.cursor()
+
+    # SQL query to select data from the user_responses table
+    sql_query = "SELECT response AS ocean_array FROM user_responses WHERE id BETWEEN 35 AND 84"
+
+    
+
+
+    try:
+        # Execute the SQL query
+        cursor.execute(sql_query)
+
+        # Fetch all rows of the result
+        result = cursor.fetchall()
+
+        # Process the fetched data
+        # Process the fetched data
+        oceanArray = [float(row[0]) for row in result]
+
+        # Calculate the values for O, E, A, N, C
+        e = (20 + oceanArray[0] - oceanArray[5] + oceanArray[10] - oceanArray[15] +
+             oceanArray[20] - oceanArray[25] + oceanArray[30] - oceanArray[35] +
+             oceanArray[40] - oceanArray[45]) / 0.4
+        a = (14 - oceanArray[1] + oceanArray[6] - oceanArray[11] + oceanArray[16] -
+             oceanArray[21] + oceanArray[26] - oceanArray[31] + oceanArray[36] +
+             oceanArray[41] - oceanArray[46]) / 0.4
+        c = (14 + oceanArray[2] - oceanArray[7] + oceanArray[12] - oceanArray[17] +
+             oceanArray[22] - oceanArray[27] + oceanArray[32] - oceanArray[37] +
+             oceanArray[42] - oceanArray[47]) / 0.4
+        n = (38 - oceanArray[3] + oceanArray[8] - oceanArray[13] + oceanArray[18] -
+             oceanArray[23] + oceanArray[28] - oceanArray[33] + oceanArray[38] +
+             oceanArray[43] - oceanArray[48]) / 0.4
+        o = (8 + oceanArray[4] - oceanArray[9] + oceanArray[14] - oceanArray[19] +
+             oceanArray[24] - oceanArray[29] + oceanArray[34] - oceanArray[39] +
+             oceanArray[44] - oceanArray[49]) / 0.4
+
+        # Print or use the calculated values
+        print("E:", e)
+        print("A:", a)
+        print("C:", c)
+        print("N:", n)
+        print("O:", o)
+
+    except Exception as e:
+        print("Error executing the query:", e)
+
+    sql_query_generic = "SELECT response AS generic_array FROM user_responses WHERE id BETWEEN 1 AND 20"
+
+    try:
+        # Execute the SQL query for generic_array
+        cursor.execute(sql_query_generic)
+
+        # Fetch all rows of the result
+        result_generic = cursor.fetchall()
+
+        # Process the fetched data for generic_array
+        genericArray = [float(row[0]) for row in result_generic]
+        print(genericArray)
+
+    except Exception as e:
+        print("Error executing the query for generic_array:", e)
+    
+    sql_query_engi = "SELECT response AS generic_array FROM user_responses WHERE id BETWEEN 20 AND 33"
+
+    try:
+        # Execute the SQL query for generic_array
+        cursor.execute(sql_query_engi)
+
+        # Fetch all rows of the result
+        result_engi = cursor.fetchall()
+
+        # Process the fetched data for generic_array
+        engiArray = [float(row[0]) for row in result_engi]
+        print(engiArray)
+
+    except Exception as e:
+        print("Error executing the query for generic_array:", e)
+
+
+else:
+    print("Failed to connect to the database")
+
+app = Flask(__name__)
 
 # Load the trained models
 model_generic = tf.keras.models.load_model("akankshai/AI Files/model_generic.h5")
@@ -10,9 +110,11 @@ model_parallel_2 = tf.keras.models.load_model("akankshai/AI Files/model_parallel
 model_combined = tf.keras.models.load_model("akankshai/AI Files/model_combined.h5")
 
 # Example input data (replace with your actual input data)
-input_data_generic = [2, 3, 3, 0, 2, 0, 2, 1, 2, 0, 1, 2, 0, 0, 2, 0, 0, 2, 1, 0]
-input_data_parallel_1 = [0, 0.66, 0, 0, 0, 0, 0.25, 0, 0, 0.5, 0, 0.25, 0, 0]
-input_data_parallel_2 = [0.706181, 0.604714, 0.528406, 0.557752, 0.315469]
+input_data_generic = genericArray
+input_data_parallel_1 = engiArray
+input_data_parallel_2 = [o,c,e,a,n]
+
+
 
 # Convert lists to numpy arrays for compatibility with TensorFlow
 X_input_generic = tf.constant([input_data_generic], dtype=tf.float32)

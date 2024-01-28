@@ -1,71 +1,131 @@
-<!-- index.html -->
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predicted Labels</title>
-</head>
-<body>
-    <h1>Predicted Labels</h1>
-    
-    <h2>Generic AI:</h2>
-    <p>{{ predicted_labels_generic }}</p>
-
-    <h2>Parallel AI 1:</h2>
-    <p>{{ predicted_labels_parallel_1 }}</p>
-
-    <h2>Parallel AI 2:</h2>
-    <p>{{ predicted_labels_parallel_2 }}</p>
-
-    <h2>Combined AI:</h2>
-    <p>{{ predicted_labels_combined }}</p>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predicted Labels</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .grid1 {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .suggestedclg {
+            background-color: #EDF5FF;
+            border: 1px solid #EDF5FF;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .resources {
+            margin-top: 20px;
+        }
+
+        .grid2 {
+            flex: 1;
+            padding: 20px;
+            border: solid;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: relative; /* Make sure it's positioned relative for absolute positioning */
+        }
+
+        .grid2 img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            max-width: 100%;
+            height: auto;
+        }
+
+        h1,
+        h2 {
+            color: #333333;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        li {
+            list-style-type: none;
+            margin-bottom: 8px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Predicted Labels</h1>
+    <div class="container">
+        <div class="grid1">
+           
+            <div class="suggestedclg">
+                <h2>Suggested Colleges:</h2>
+                <p>
+                    {% for exam in college_exam_data[predicted_labels_combined]['colleges'] %}
+                    <li>{{ exam }}</li>
+                    {% endfor %}
+                </p>
+            </div>
+            <div class="resources">
+                <h2>Entrance Exams:</h2>
+                <p>
+                    {% for exam in college_exam_data[predicted_labels_combined]['exams'] %}
+                    <li>{{ exam }}</li>
+                    {% endfor %}
+                </p>
 
-    <h2>Generic AI:</h2>
-    <p>{{ predicted_labels_generic }}</p>
+                <h2>Suggested Resources:</h2>
+                <p>
+                    {% for exam in college_exam_data[predicted_labels_combined]['resources'] %}
+                    <li>{{ exam }}</li>
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+        <div class="grid2">
+            <h1>Predicted Labels</h1>
 
-    <h2>Parallel AI 1:</h2>
-    <p>{{ predicted_labels_parallel_1 }}</p>
+            <h2>Generic AI:</h2>
+            <p>{{ predicted_labels_generic }}</p>
 
-    <h2>Parallel AI 2:</h2>
-    <p>{{ predicted_labels_parallel_2 }}</p>
+            <h2>Parallel AI 1:</h2>
+            <p>{{ predicted_labels_parallel_1 }}</p>
 
-    <h2>Combined AI:</h2>
-    <p>{{ predicted_labels_combined }}</p>
+            <h2>Parallel AI 2:</h2>
+            <p>{{ predicted_labels_parallel_2 }}</p>
 
-    <h2>Suggested Colleges:</h2>
-    <p>
-        {% for exam in college_exam_data[predicted_labels_combined]['colleges'] %}
-        <li>{{ exam }}</li>
-        {% endfor %}
-    </p>
+            <h2>Combined AI:</h2>
+            <p>{{ predicted_labels_combined }}</p>
 
-    <h2>Entrance Exams:</h2>
-    <p>
-        {% for exam in college_exam_data[predicted_labels_combined]['exams'] %}
-        <li>{{ exam }}</li>
-        {% endfor %}
-    </p>
-
-    <h2>Suggested Resources:</h2>
-    <p>
-        {% for exam in college_exam_data[predicted_labels_combined]['resources'] %}
-        <li>{{ exam }}</li>
-        {% endfor %}
-    </p>
+            
+        </div>
+    </div>
 </body>
+
 </html>

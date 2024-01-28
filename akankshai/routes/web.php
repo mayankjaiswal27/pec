@@ -33,5 +33,7 @@ Route::post('/quiz', [QuizController::class, 'store'])->name('quiz.store');
 Route::get('/meet', function () {
     return view('meet');
 })->name('meet');
-
+Route::get('/results', function () {
+    return view('result');
+});
 require __DIR__.'/auth.php';
