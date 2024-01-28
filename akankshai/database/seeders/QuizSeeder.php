@@ -27,7 +27,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'question' => 'Have you thought about what you might want to study in college or pursue as a career??',
-                'options' => json_encode(['Yes, a science-related field', 'Yes, a humanities-related field', 'MathemYes, a business-related fieldatics', 'No, I havent decided yet',"No, I don't plan to go to college"]),
+                'options' => json_encode(['Yes, a science-related field', 'Yes, a humanities-related field', 'Yes, a business-related fieldatics', 'No, I havent decided yet',"No, I don't plan to go to college"]),
             ],
             [
                 'question' => 'How comfortable are you with using technology and various software applications?',

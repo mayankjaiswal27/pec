@@ -208,14 +208,14 @@
               <div class="grid-container">
                   <div class="grid-child-one">
                         <div class="logo">
-                            <img src="../assets/logo.svg"/>
+                            <img src="./assets/logo.svg"/>
                         </div>
                         <div class="text">
                             <h2>Akanshao se safalta tak </h2>
                             <p>Welcome back please login to your account</p>
                         </div>  
                         <div class="login"><br>
-                            <form action="{{ url('/student/login') }}" method="post">
+                            <form action="{{ url('/login') }}" method="post">
                                 @csrf
                                 <input type="email" name="email" placeholder="email" value="{{ old('email') }}" required><br>
                                 <input type="password" name="password" placeholder="password" required><br>
