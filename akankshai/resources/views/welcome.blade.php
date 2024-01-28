@@ -136,7 +136,7 @@
                                 Take our tests to find out, what career
                                 suits the most to your personality .
                                 Are you ready?</p><br><br>
-                                <a href="{{route('login')}}"><button class="btn"><span class="btn-text">Take Test</span></button></a>
+                                <a href="{{url('/login') }}"><button class="btn"><span class="btn-text">Take Test</span></button></a>
                                 <img src="./assets/dashboardimg.svg"/>
                         </div>
                         
