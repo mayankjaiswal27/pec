@@ -1,5 +1,7 @@
 <?php
 
+// database/migrations/xxxx_xx_xx_create_quizzes_table.php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,7 +14,7 @@ class CreateQuizzesTable extends Migration
             $table->id();
             $table->text('question');
             $table->json('options');
-            $table->integer('response')->nullable();
+            $table->integer('correct_option');
             $table->timestamps();
         });
     }
@@ -22,5 +24,4 @@ class CreateQuizzesTable extends Migration
         Schema::dropIfExists('quizzes');
     }
 }
-
 

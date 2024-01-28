@@ -13,7 +13,7 @@ class QuizSeeder extends Seeder
     public function run()
     {
         
-        Quiz::truncate();
+       
 
         
         $quizzes = [
@@ -31,7 +31,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'question' => 'How comfortable are you with using technology and various software applications?',
-                'options' => json_encode(['Very comfortablece', 'Somewhat comfortable', 'Neutral', 'Not very comfortable','Not comfortable at all']),
+                'options' => json_encode(['Very comfortable', 'Somewhat comfortable', 'Neutral', 'Not very comfortable','Not comfortable at all']),
             ],
             [
                 'question' => 'What type of books do you enjoy reading the most?',
@@ -355,17 +355,11 @@ class QuizSeeder extends Seeder
                 'question' => "Am full of ideas",
                 'option' => json_encode(["disagree","sightly disagree","neutral","slighty agree","agree"]),
             ]
-
-
+            
+            
         ];
-
 
        
         Quiz::insert($quizzes);
     }
-} 
-
-
-
-
-
+}

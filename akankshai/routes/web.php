@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::get('/quiz', [QuizController::class, 'index'])->name('quiz.index');
-Route::post('/submit', [QuizController::class, 'submit'])->name('quiz.submit');
+Route::post('/quiz', [QuizController::class, 'store'])->name('quiz.store');
 Route::get('/meet', function () {
     return view('meet');
 })->name('meet');
