@@ -153,6 +153,10 @@ class QuizSeeder extends Seeder
                 'question' => "What type of technology trends do you actively follow or research?",
                 'options' => json_encode(["Software development frameworks","Emerging electronic devices","Advanced manufacturing technologies","Innovations in construction materials","Other"]),
             ],
+            [
+                'question' => "What is your family income?",
+                'options' => json_encode(["Below 1LPA","Below 5 LPA","Below 8 LPA","Below 12 LPA","Above 12 LPA"]),
+            ],
 
             ## Big-5
             [
